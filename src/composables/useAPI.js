@@ -14,6 +14,17 @@ export default function useAPI() {
             categories.value = response.data.trivia_categories
         }
     }
+
+    const getQuestion = async (categoryId) => {
+        const response = await instance.get('api.php', {
+            params: {
+                amount: 1,
+                category: categoryId,
+            }
+        })
+
+        return response.data.results[0]
+    }
     
-    return { instance, categories, getCategories }
+    return { instance, categories, getCategories, getQuestion}
 }
