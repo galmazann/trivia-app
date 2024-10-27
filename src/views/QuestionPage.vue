@@ -25,7 +25,7 @@ onMounted(async () => {
   answers.value.push({
     id: answers.value.length,
     correct: true,
-    answer: question.value.correct_answer
+    answer: question.value.correct_answer,
     points: question.value.difficulty === 'easy' ? 10 : question.value.difficulty === 'medium' ? 20 : 30,
   })
 
